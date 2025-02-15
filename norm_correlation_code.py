@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from collections import namedtuple
 import argparse
 import os
