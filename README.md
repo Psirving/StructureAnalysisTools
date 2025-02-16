@@ -1,8 +1,7 @@
 Tools for analyzing and visualizing RNA probing data and structure models
-------------------------------------------------------------------------------
+=======================================================================================
 
-> Copyright 2022 Anthony Mustoe
-> Contact: anthony.mustoe@bcm.edu
+> Copyright 2022 Anthony Mustoe (anthony.mustoe@bcm.edu)
 
 ## ArcPlot
 
@@ -27,9 +26,9 @@ Can plot the following types of data
   - `--pairmap` plot PAIR-MaP base pairs
 
 - Reactivity profiles
-  > **_Note:_**
-    If multiple files are submitted for any of these profile flags - an average
-    reactivity and corresponding standard deviation will be calculated and plotted for each nucleotide.
+  > **_Note:_** If multiple files are submitted for any of these profile flags - an
+    average reactivity and corresponding standard deviation will be calculated and
+    plotted for each nucleotide.
   - `--profile` plot normalized SHAPE reactivity data
   - `--dmsprofile` plot normalized reactivity data colored to slightly different scale
   - `--N7profile` plots normalized N7G reactivity data from profile file (profile.txtga)
@@ -41,11 +40,14 @@ Houses CT and DotPlot objects. Renamed from RNATools
 ### foldPK
 
 Functions and scripts that wrap around ShapeKnots to fold RNAs with multiple PKs.
-Structure models are written as CT format files (see RNAstructure documentation for details).
+Structure models are written as CT format files (see RNAstructure docs for details).
+
+https://rna.urmc.rochester.edu/RNAstructure.html
 
 Multiple CT files may be generated as part of the hierarchical folding process. 
 These are denoted as [outprefix].1.ct, .2.ct, etc. The final solution will be named [outprefix].f.ct.
-
 A constraint file may also be written as [outprefix].cons during folding; this can be deleted.
 
-Note that if calling foldPK from the command line UI you will either need to use the `--skpath` argument to pass the path to the ShapeKnots executable OR edit the 'default' path located within the code (line 103) to point to your ShapeKnots executable
+Note that if calling foldPK from the command line UI you will either need to
+use the `--skpath` argument to pass the path to the ShapeKnots executable
+OR edit the 'default' path located within the code (line 103) to point to your ShapeKnots executable.
