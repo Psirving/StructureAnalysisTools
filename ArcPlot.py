@@ -1655,7 +1655,7 @@ def parseArgs():
 
     # subparse the bounds argument
     if args.bound:
-        args.bound = map(int, args.bound.split(','))
+        args.bound = list(map(int, args.bound.split(',')))
  
     
     # subparse the ct arguments
