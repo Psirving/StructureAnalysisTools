@@ -1,15 +1,28 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="StructureAnalysisTools",
-    scripts=[
-        "ArcPlot.py",
-        "correlation_code.py",
-        "download_eclip.py",
-        "foldPK.py",
-        "get_from_genome.py",
-        "norm_correlation_code.py",
-        "pairmap_analysis.py",
+    packages=["StructureAnalysisTools"],
+    package_dir={"StructureAnalysisTools": "./"},
+    py_modules=[
+        "StructureAnalysisTools.ArcPlot",
+        "StructureAnalysisTools.correlation_code",
+        "StructureAnalysisTools.download_eclip",
+        "StructureAnalysisTools.foldPK",
+        "StructureAnalysisTools.get_from_genome",
+        "StructureAnalysisTools.mean_reactivity_stdev",
+        "StructureAnalysisTools.norm_correlation_code",
+        "StructureAnalysisTools.pairmap_analysis",
+        "StructureAnalysisTools.ReactivityProfile",
+        "StructureAnalysisTools.RNAStructureObjects",
     ],
-    packages=find_packages(),
+    scripts=[
+        "./StructureAnalysisTools/ArcPlot.py",
+        "./StructureAnalysisTools/correlation_code.py",
+        "./StructureAnalysisTools/download_eclip.py",
+        "./StructureAnalysisTools/foldPK.py",
+        "./StructureAnalysisTools/get_from_genome.py",
+        "./StructureAnalysisTools/norm_correlation_code.py",
+        "./StructureAnalysisTools/pairmap_analysis.py",
+    ],
 )
