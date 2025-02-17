@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Anthony Mustoe
 # 2020
 
