@@ -8,7 +8,7 @@ import scipy.stats
 import argparse 
  
 import sys
-from ReactivityProfile import ReactivityProfile
+from StructureAnalysisTools.ReactivityProfile import ReactivityProfile
 
     
 

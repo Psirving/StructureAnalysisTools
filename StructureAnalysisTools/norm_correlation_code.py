@@ -5,23 +5,23 @@ import os
 import math
 import sys
 sys.path.append("/storage/mustoe/software/StructureAnalysisTools-Dev")
-from ReactivityProfile import ReactivityProfile
+from StructureAnalysisTools.ReactivityProfile import ReactivityProfile
 import numpy as np
 import matplotlib
-#Avoid using windows backend as this was written for the TACO computational cluster
-#at BCM
+# Avoid using windows backend as this was written for the TACO computational cluster
+# at BCM
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
 import scipy.stats
 
-#Custom named record for the purpose of housing reactivities
+# Custom named record for the purpose of housing reactivities
 normalized_tuple = namedtuple('normalized_profile_values', 'A C U G G_N7')
 
 
-#Extract and sort profile names from the user submitted profile folder.
-#Always keeps central profile first in the sorted order.
+# Extract and sort profile names from the user submitted profile folder.
+# Always keeps central profile first in the sorted order.
 def get_profiles(prof_1, folder):
     profile_strings = os.listdir(folder) 
     profile_strings = list(filter(lambda name: name[-4:] == ".txt", profile_strings))
@@ -31,8 +31,8 @@ def get_profiles(prof_1, folder):
     profile_strings = [prof_1] + profile_strings
          
     return profile_strings
-    
-#Extract and return reactivity tuple for each profile 
+
+# Extract and return reactivity tuple for each profile
 def get_reactivities(profile_strings, folder):
     
     reactivity_tuples = []
@@ -52,8 +52,8 @@ def get_reactivities(profile_strings, folder):
         
     return reactivity_tuples
 
-#Calculate linear regression, pearson correlation of two lists of reactivities.
-#Plot information to a given subplot.
+# Calculate linear regression, pearson correlation of two lists of reactivities.
+# Plot information to a given subplot.
 def plot_reactivity(ax, original_x, y, x_title, y_title = None):
     
     x = [elem for elem in original_x]
@@ -100,8 +100,8 @@ def plot_reactivity(ax, original_x, y, x_title, y_title = None):
     ax.set_title(x_title +  ": R: {0:.3} M: {1:.3}".format(regress.rvalue, regress.slope))
 
 
-#Generate and plot correlation, slope, and scatter plots for the cartesian product of the main
-#profile and all other profiles.
+# Generate and plot correlation, slope, and scatter plots for the cartesian product of the main
+# profile and all other profiles.
 def plot_all_reactivities(profile_strings, normalized_tuple_list, out_prefix):
     main_file = profile_strings[0]
     secondary_files = profile_strings[1:]
@@ -138,8 +138,8 @@ def plot_all_reactivities(profile_strings, normalized_tuple_list, out_prefix):
     plt.savefig("{}.pdf".format(args.out_prefix))
 
 
-#Remove any NT in the normalized tuple list that contains a NaN value as this
-#will interfere with downstream correlation calculations.
+# Remove any NT in the normalized tuple list that contains a NaN value as this
+# will interfere with downstream correlation calculations.
 def remove_NaN(normalized_tuple_list, profile_strings):
     nan_columns = {"A":[], "C":[], "U":[], "G":[], "G_N7":[]}
 
@@ -160,7 +160,6 @@ def remove_NaN(normalized_tuple_list, profile_strings):
                                                                G_N7 = [ nt for index, nt in enumerate(norm_tuple[4]) if index not in nan_columns["G_N7"] ]))
         
     return filtered_normalized_tuple_list 
-
 
 
 if __name__ == "__main__":

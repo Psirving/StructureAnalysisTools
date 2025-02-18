@@ -1,6 +1,6 @@
 import argparse
 import matplotlib.pyplot as plt
-import ReactivityProfile as rp
+import StructureAnalysisTools.ReactivityProfile as rp
 from matplotlib.ticker import MaxNLocator
 from matplotlib.patches import Rectangle
 import numpy as np

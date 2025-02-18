@@ -14,7 +14,7 @@
 
 import sys, os, math, argparse
 import pandas as pd
-import RNAStructureObjects as RNAtools
+import StructureAnalysisTools.RNAStructureObjects as RNAtools
 import numpy as np
 import matplotlib 
 matplotlib.use('Agg')
@@ -31,8 +31,8 @@ import matplotlib.gridspec as gridspec
 from matplotlib.path import Path
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 
-from ReactivityProfile import ReactivityProfile
-from mean_reactivity_stdev import average_profile, calc_stdev
+from StructureAnalysisTools.ReactivityProfile import ReactivityProfile
+from StructureAnalysisTools.mean_reactivity_stdev import average_profile, calc_stdev
 
 #import warnings
 

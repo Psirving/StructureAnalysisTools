@@ -2,9 +2,8 @@
 # Anthony Mustoe
 # 2020
 
-import RNAStructureObjects as RNAtools
+import StructureAnalysisTools.RNAStructureObjects as RNAtools
 import subprocess, argparse, os
-
 
 
 def writeConstraints(outfile, pairs):
@@ -23,7 +22,6 @@ def writeConstraints(outfile, pairs):
             out.write("{}\n".format(n))
         out.write('-1\nMod:\n-1\nPairs:\n-1 -1\nFMN:\n-1\nForbids:\n-1 -1\n')
 
- 
 
 def runShapeKnots(ShapeKnotsPath, seqfile, output, shapefile=None, shapepars=None, dmsfile=None, bpfile=None, consfile=None, cordero=False):
 
@@ -53,8 +51,6 @@ def runShapeKnots(ShapeKnotsPath, seqfile, output, shapefile=None, shapepars=Non
 
     print(commands)
     subprocess.call(commands)
-
-
 
 
 def iterativeShapeKnots(ShapeKnotsPath, seqfile, outprefix, shapefile=None, shapepars=None, dmsfile=None, bpfile=None, maxPKs=5, cordero=False):
@@ -98,9 +94,6 @@ def iterativeShapeKnots(ShapeKnotsPath, seqfile, outprefix, shapefile=None, shap
         subprocess.call(['mv', output, '{}.f.ct'.format(outprefix)])
 
 
-
-
-
 if __name__ == '__main__':
     
     prs = argparse.ArgumentParser(description='Script to iteratively run ShapeKnots to find multiple PKs')
@@ -139,5 +132,3 @@ if __name__ == '__main__':
     iterativeShapeKnots(args.skpath, args.seqfile, args.outprefix, 
                         shapefile=args.shapefile, shapepars=args.shapepars,
                         dmsfile=args.dmsfile, bpfile=args.bpfile)
-    
-    
