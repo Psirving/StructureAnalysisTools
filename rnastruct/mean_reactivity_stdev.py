@@ -1,10 +1,10 @@
 import argparse
 import matplotlib.pyplot as plt
-import StructureAnalysisTools.ReactivityProfile as rp
 from matplotlib.ticker import MaxNLocator
 from matplotlib.patches import Rectangle
 import numpy as np
 
+import rnastruct.ReactivityProfile as rp
 
 
 def load_profiles(profile_files):

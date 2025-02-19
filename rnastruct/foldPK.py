@@ -2,7 +2,7 @@
 # Anthony Mustoe
 # 2020
 
-import StructureAnalysisTools.RNAStructureObjects as RNAtools
+import rnastruct.RNAStructureObjects as RNAtools
 import subprocess, argparse, os
 
 

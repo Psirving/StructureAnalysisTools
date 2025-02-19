@@ -5,7 +5,7 @@ import os
 import math
 import sys
 sys.path.append("/storage/mustoe/software/StructureAnalysisTools-Dev")
-from StructureAnalysisTools.ReactivityProfile import ReactivityProfile
+from rnastruct.ReactivityProfile import ReactivityProfile
 import numpy as np
 import matplotlib
 # Avoid using windows backend as this was written for the TACO computational cluster

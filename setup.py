@@ -2,17 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     name="StructureAnalysisTools",
-    packages=find_packages(
-        include=["StructureAnalysisTools", "StructureAnalysisTools.*"]
-    ),
-    package_dir={"StructureAnalysisTools": "./"},
+    packages=find_packages(include=["rnastruct", "rnastruct.*"]),
+    package_dir={"": "./"},
     scripts=[
-        "./StructureAnalysisTools/ArcPlot.py",
-        "./StructureAnalysisTools/correlation_code.py",
-        "./StructureAnalysisTools/download_eclip.py",
-        "./StructureAnalysisTools/foldPK.py",
-        "./StructureAnalysisTools/get_from_genome.py",
-        "./StructureAnalysisTools/norm_correlation_code.py",
-        "./StructureAnalysisTools/pairmap_analysis.py",
+        "./rnastruct/ArcPlot.py",
+        "./rnastruct/correlation_code.py",
+        "./rnastruct/download_eclip.py",
+        "./rnastruct/foldPK.py",
+        "./rnastruct/get_from_genome.py",
+        "./rnastruct/norm_correlation_code.py",
+        "./rnastruct/pairmap_analysis.py",
     ],
 )
