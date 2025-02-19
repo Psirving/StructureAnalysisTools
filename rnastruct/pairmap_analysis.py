@@ -266,7 +266,7 @@ def masked(pair, mask, window):
 if __name__ == '__main__':
     
     import argparse
-    import RNAStructureObjects as RNAtools
+    import rnastruct.RNAStructureObjects as RNAtools
 
     prs = argparse.ArgumentParser()
     

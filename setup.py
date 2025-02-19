@@ -13,4 +13,12 @@ setup(
         "./rnastruct/norm_correlation_code.py",
         "./rnastruct/pairmap_analysis.py",
     ],
+    install_requires=[
+        "pandas",
+        "numpy",
+        "matplotlib",
+        "scipy",
+        "requests",
+        "pybedtools",
+    ],
 )
